@@ -133,9 +133,9 @@ docutils==0.17.1 \
     #   myst-parser
     #   sphinx
     #   sphinx-panels
-dparse==0.5.1 \
-    --hash=sha256:a1b5f169102e1c894f9a7d5ccf6f9402a836a5d24be80a986c7ce9eaed78f367 \
-    --hash=sha256:e953a25e44ebb60a5c6efc2add4420c177f1d8404509da88da9729202f306994
+dparse==0.6.2 \
+    --hash=sha256:8097076f1dd26c377f30d4745e6ec18fef42f3bf493933b842ac5bafad8c345f \
+    --hash=sha256:d45255bda21f998bc7ddf2afd5e62505ba6134756ba2d42a84c56b0826614dfe
     # via safety
 flake8==4.0.1 \
     --hash=sha256:479b1304f72536a55948cb40a32dce8bb0ffe3501e26eaf292c7e60eb5e0428d \
@@ -453,6 +453,13 @@ pep8-naming==0.12.1 \
     --hash=sha256:4a8daeaeb33cfcde779309fc0c9c0a68a3bbe2ad8a8308b763c5068f86eb9f37 \
     --hash=sha256:bb2455947757d162aa4cad55dba4ce029005cd1692f2899a21d51d8630ca7841
     # via -r ../requirements-dev.in
+pip==22.0.4 \
+    --hash=sha256:b3a9de2c6ef801e9247d1527a4b16f92f2cc141cd1489f3fffaf6a9e96729764 \
+    --hash=sha256:c6aca0f2f081363f689f041d90dab2a07a9a07fb840284db2218117a52da800b
+    # via
+    #   -r ../requirements-dev.in
+    #   pip-api
+    #   pip-tools
 pip-api==0.0.29 \
     --hash=sha256:36c3211975e69c46c1d3b13b702dcc96d054d54e02147b1485300cf5fc45c1a0 \
     --hash=sha256:f701584eb1c3e01021c846f89d629ab9373b6624f0626757774ad54fc4c29571
@@ -573,7 +580,6 @@ pyyaml==6.0 \
     --hash=sha256:f84fbc98b019fef2ee9a1cb3ce93e3187a6df0b2538a651bfb890254ba9f90b5
     # via
     #   bandit
-    #   dparse
     #   myst-parser
 requests==2.27.1 \
     --hash=sha256:68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61 \
@@ -586,10 +592,22 @@ resolvelib==0.8.1 \
     --hash=sha256:c6ea56732e9fb6fca1b2acc2ccc68a0b6b8c566d8f3e78e0443310ede61dbd37 \
     --hash=sha256:d9b7907f055c3b3a2cfc56c914ffd940122915826ff5fb5b1de0c99778f4de98
     # via pip-audit
-safety==1.10.3 \
-    --hash=sha256:30e394d02a20ac49b7f65292d19d38fa927a8f9582cdfd3ad1adbbc66c641ad5 \
-    --hash=sha256:5f802ad5df5614f9622d8d71fedec2757099705c2356f862847c58c6dfe13e84
+ruamel-yaml==0.17.21 \
+    --hash=sha256:742b35d3d665023981bd6d16b3d24248ce5df75fdb4e2924e93a05c1f8b61ca7 \
+    --hash=sha256:8b7ce697a2f212752a35c1ac414471dc16c424c9573be4926b56ff3f5d23b7af
+    # via safety
+safety==2.3.5 \
+    --hash=sha256:2227fcac1b22b53c1615af78872b48348661691450aa25d6704a5504dbd1f7e2 \
+    --hash=sha256:a60c11f8952f412cbb165d70cb1f673a3b43a2ba9a93ce11f97e6a4de834aa3a
     # via -r ../requirements-dev.in
+setuptools==60.9.3 \
+    --hash=sha256:2347b2b432c891a863acadca2da9ac101eae6169b1d3dfee2ec605ecd50dbfe5 \
+    --hash=sha256:e4f30b9f84e5ab3decf945113119649fec09c1fc3507c6ebffec75646c56e62b
+    # via
+    #   astroid
+    #   cyclonedx-python-lib
+    #   pip-tools
+    #   safety
 six==1.16.0 \
     --hash=sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926 \
     --hash=sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254
@@ -662,10 +680,8 @@ tomli==2.0.1 \
     --hash=sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc \
     --hash=sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f
     # via
-    #   black
     #   mypy
     #   pep517
-    #   pylint
 types-setuptools==57.4.9 \
     --hash=sha256:536ef74744f8e1e4be4fc719887f886e74e4cf3c792b4a06984320be4df450b5 \
     --hash=sha256:948dc6863373750e2cd0b223a84f1fb608414cde5e55cf38ea657b93aeb411d2
@@ -754,20 +770,3 @@ wrapt==1.13.3 \
     --hash=sha256:f9c51d9af9abb899bd34ace878fbec8bf357b3194a10c4e8e0a25512826ef056 \
     --hash=sha256:fd76c47f20984b43d93de9a82011bb6e5f8325df6c9ed4d8310029a55fa361ea
     # via astroid
-
-# The following packages are considered to be unsafe in a requirements file:
-pip==22.0.4 \
-    --hash=sha256:b3a9de2c6ef801e9247d1527a4b16f92f2cc141cd1489f3fffaf6a9e96729764 \
-    --hash=sha256:c6aca0f2f081363f689f041d90dab2a07a9a07fb840284db2218117a52da800b
-    # via
-    #   -r ../requirements-dev.in
-    #   pip-api
-    #   pip-tools
-setuptools==60.9.3 \
-    --hash=sha256:2347b2b432c891a863acadca2da9ac101eae6169b1d3dfee2ec605ecd50dbfe5 \
-    --hash=sha256:e4f30b9f84e5ab3decf945113119649fec09c1fc3507c6ebffec75646c56e62b
-    # via
-    #   astroid
-    #   cyclonedx-python-lib
-    #   pip-tools
-    #   safety
